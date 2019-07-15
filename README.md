@@ -5,13 +5,14 @@ Welcome everyone! Ask your instructor if you haven't already got a lab server sh
 Lab 1 - Getting to know your lab environment
 
 Steps:
+
 1: Open up an SSH client on your laptop and SSH into your training server.
   ```
     ssh -i nycclass.pem centos@<IP_address_of_your_training_server>
   ```
-Look on your lab sheet for a link to download the above PEM file if you don't already have it. 
-
-2. In the SSH session on your training server run the following commands:
+   Look on your lab sheet for a link to download the above PEM file if you don't already have it.
+   
+2. In the SSH session on your training server run the following command:
 ```
   kubectl get nodes
 ```
@@ -20,5 +21,11 @@ Look on your lab sheet for a link to download the above PEM file if you don't al
    kubectl get pods --namespace kube-system
 ```
    You can see that we have Tigera Secure running on top of our Kubernetes install. We will be using Tigera Secure and Calico to lock down and secure our demo workloads on Kubernetes.
+```
+  calicoctl get license
+```
+   This will show the temporary license we have for Tigera Secure. As stated in the slides ```calicoctl``` is a tool very similar to ```kubectl``` but with certain specifc use cases when managing Calico and Tigera Secure. 
+   
+ 
 
 
