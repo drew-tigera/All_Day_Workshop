@@ -25,6 +25,15 @@ Steps:
   calicoctl get license
 ```
    This will show the temporary license we have for Tigera Secure. As stated in the slides ```calicoctl``` is a tool very similar to ```kubectl``` but with certain specifc use cases when managing Calico and Tigera Secure. 
+
+Lab 2 - Configuring the Calico CNI
+
+Steps:
+
+1: Go back to your SSH session we are going to setup a new subnet for our DMZ namespace. First we will create the IP Pool to use with the DMZ namespace
+
+```
+
    
  
 
