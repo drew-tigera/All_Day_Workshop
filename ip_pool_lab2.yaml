@@ -1,0 +1,8 @@
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: dmz-pool
+spec:
+  cidr: 10.0.0.1/24
+  ipipMode: Always
+  natOutgoing: true
