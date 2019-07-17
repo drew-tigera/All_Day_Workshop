@@ -86,6 +86,26 @@ Scroll up to see the IP address assigned to your pod. It should be in the 192.16
 ```
 kubectl create deployment nginx --image=nginx -n dmz
 ```
+Now run the same ```kubectl get pods``` & ```describe``` commands as in Step 3, just be sure to add ```-n dmz``` to each one.
 
+You can also verify connectivity to the two subnets by ```curl <pod IPs>``` you should see the good old nginx default page.
 
+5. Clean up 
+
+```
+kubectl delete deployment nginx
+```
+And then
+```
+kubectl delete ns dmz
+```
+And then
+```
+calicoctl delete ippool dmz-pool
+```
+And it's like it never happened. 
+
+Lab 3: Stars Policy Tutorial
+
+[Link to Stars tutorial](https://docs.projectcalico.org/v3.8/security/stars-policy/)
 
