@@ -107,5 +107,5 @@ And it's like it never happened.
 
 Lab 3: Stars Policy Tutorial
 
-[Link to Stars tutorial](https://docs.projectcalico.org/v3.8/security/stars-policy/)
+[Link to Stars tutorial](https://docs.projectcalico.org/v3.8/security/stars-policy/ target=_blank)
 
