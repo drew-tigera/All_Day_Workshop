@@ -44,6 +44,26 @@ spec:
    natOutgoing: true
 EOF
 ```
+Verify your pool with the following command:
+```
+calicoctl get ippools
+``` 
+You should see your new DMZ pool.
+
+2. Create a Namespace that references the IP pool you just created:
+
+```
+kubectl create -f -<<EOF
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dmz
+  labels:
+  	location: dmz
+  annotations:
+    "cni.projectcalico.org/ipv4pools": "[\"dmz-pool\"]"
+EOF
+```
 
    
  
