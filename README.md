@@ -59,13 +59,33 @@ kind: Namespace
 metadata:
   name: dmz
   labels:
-  	location: dmz
+    location: dmz
   annotations:
     "cni.projectcalico.org/ipv4pools": "[\"dmz-pool\"]"
 EOF
 ```
+Verify the new namespace with the following command:
+```
+kubectl describe namespace dmz
+```
+3. Spin up an nginx deplyment in your default namespace. This should pull an IP from the original pod pool from when k8s was setup. 
+```
+kubectl create deployment nginx --image=nginx
+```
+Then run this command to find out the name of the nginx pod:
+```
+kubectl get pods
+```
+Note the full name of your pod and run this command (be sure to replace the bits in < > with your actual pod name:
+```
+kubectl describe pods <your_pod_name>
+```
+Scroll up to see the IP address assigned to your pod. It should be in the 192.168.0.0/16 subnet.
 
-   
- 
+4. Spin up an nginx deployment in the DMZ namespace:
+```
+kubectl create deployment nginx --image=nginx -n dmz
+```
+
 
 
