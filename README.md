@@ -109,3 +109,28 @@ Lab 3: Stars Policy Tutorial
 
 https://docs.projectcalico.org/v3.8/security/stars-policy/
 
+Lab 4: Tigera Secure Tierd Policy Demo
+
+https://docs.tigera.io/v2.4/security/tiered-policy
+
+Lab 5: DNS Policy Lab: Create DNS based global network sets and then allow egress to them from a namespace
+
+Step 1: Create a namespace named test
+```
+kubectl create ns test
+```
+Step 2: Create a DNS Global Network Set for tigera.io and google.com
+```
+kubectl create -f -<<EOF
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkSet
+metadata:
+  name: allowed-domains-1
+  labels:
+    external: allowed
+spec:
+  allowedEgressDomains:
+  - tigera.io
+  - google.com
+EOF
+
