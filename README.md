@@ -33,6 +33,8 @@ Steps:
 1: Go back to your SSH session we are going to setup a new subnet for our DMZ namespace. First we will create the IP Pool to use with the DMZ namespace
 
 ```
+   calicoctl apply -f https://github.com/drew-tigera/All_Day_Workshop/blob/master/ip_pool_lab2.yaml
+```
 
    
  
