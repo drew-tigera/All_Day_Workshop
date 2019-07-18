@@ -10,7 +10,12 @@ Steps:
   ```
     ssh -i nycclass.pem centos@<IP_address_of_your_training_server>
   ```
-   Look on your lab sheet for a link to download the above PEM file if you don't already have it.
+   Look on your lab sheet for a link to download the above PEM file if you don't already have it
+   Once you have successfully connected run this command to become root. Don't forget the -
+   ```
+   sudo su -
+   ```
+   (Yes we know the optics are bad for running as root, but it was necessary for the automated setup we did. The next iteration will fix this issue.) 
    
 2. In the SSH session on your training server run the following command:
 ```
