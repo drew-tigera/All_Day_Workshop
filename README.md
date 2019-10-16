@@ -6,18 +6,16 @@ Lab 1 - Getting to know your lab environment
 
 Steps:
 
-1: Open up an SSH client on your laptop and SSH into your training server.
+1: Open up an SSH client on your laptop and SSH into your the jump box.
   ```
-    ssh -i nycclass.pem centos@<IP_address_of_your_training_server>
+    ssh -i class_pem ubuntu@<IP_address_of_your_jump_box>
   ```
-   Look on your lab sheet for a link to download the above PEM file if you don't already have it
-   Once you have successfully connected run this command to become root. Don't forget the -
-   ```
-   sudo su -
-   ```
-   (Yes we know the optics are bad for running as root, but it was necessary for the automated setup we did. The next iteration will fix this issue.) 
    
-2. In the SSH session on your training server run the following command:
+   You can ssh to your worker nodes and your master node from the jump box. Note that your master has kubectl and calicoctl installed. 
+   
+   ssh from your jump node into your master node. 
+   
+2. In the SSH session on your master node run the following command:
 ```
   kubectl get nodes
 ```
